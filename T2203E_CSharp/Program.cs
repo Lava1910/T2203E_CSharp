@@ -1,12 +1,48 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using T2203E_CSharp.Exercise.Phone;
+using T2203E_CSharp.Exercise.Tiendien;
 using T2203E_CSharp.Session1;
 using T2203E_CSharp.Session2;
 using T2203E_CSharp.Session3;
+using T2203E_CSharp.Session4;
 
 public class Program
 {
     static void Main(string[] args)
+    {
+        KhachHangVN a = new KhachHangVN(1, "Nguyen Van An", "2022-09-22", 219, "Cá nhân");
+        KhachHangNN b = new KhachHangNN(2, "Donal Trump", "2022-09-21", 156, "US");
+        Console.WriteLine(a.ThanhTien);
+        Console.WriteLine(b.ThanhTienNN);
+        
+    }
+    static void Main5(string[] args)
+    {
+        StringToVoid stv = new StringToVoid(ShowMessage);
+        StringToVoid stv2 = new StringToVoid(DemoDelegate.SayHello);
+        StringToVoid stv3 = new StringToVoid(new DemoDelegate().ShowInfo);
+
+        stv += DemoDelegate.SayHello;
+        stv += new DemoDelegate().ShowInfo;
+
+        stv += stv3;
+
+        stv("Xin chao cac ban");//ShowMessage("Xin chao cac ban");
+
+        DemoEvent de = new DemoEvent();
+        de.Invoke();
+
+    }
+    static void ShowMessage(string msg)
+    {
+        Console.WriteLine(msg);
+    }
+
+    static string GetMessage(string s)
+    {
+        return "Hello" + s;
+    }
+    static void Main4(string[] args)
     {
         PhoneBook pb = new PhoneBook();
         pb.InsertPhone("Nam", "0986454545");
