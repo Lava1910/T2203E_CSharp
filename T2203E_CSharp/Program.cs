@@ -1,14 +1,92 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using T2203E_CSharp.Exercise.Phone;
 using T2203E_CSharp.Exercise.Tiendien;
+using T2203E_CSharp.Exercise.Phanso;
+using T2203E_CSharp.Exercise.API;
 using T2203E_CSharp.Session1;
 using T2203E_CSharp.Session2;
 using T2203E_CSharp.Session3;
 using T2203E_CSharp.Session4;
+using T2203E_CSharp.Session5;
 
 public class Program
 {
+    //API - bat dong bo hoa
     static void Main(string[] args)
+    {
+        Fetch();
+    }
+
+    static async void Fetch()
+    {
+        CallWeatherAPI cwa = new CallWeatherAPI();
+        WeatherData s = await cwa.FetchData() ;
+        
+    }
+
+
+    //Thread
+    static void Main7(string[] args)
+    {
+        //ThreadRun();
+        //Thread t1 = new Thread(ThreadRun);
+        //Thread t2 = new Thread(ThreadRunParam);
+        //t2.IsBackground = true;
+        //t1.IsBackground = true;
+        //t1.Start();
+        //t2.Start("T2203E");
+
+        Number num = new Number() { X = 0, Y = 0 };
+        Thread n1 = new Thread(ThreadLock);
+        Thread n2 = new Thread(ThreadLock);
+        n1.Start(num);
+        n2.Start(num);
+    }
+
+    static void ThreadLock(object o)
+    {
+        Number n = (Number)o;
+        for(int i = 0; i < 20; i++)
+        {
+            lock (n)
+            {
+                n.ChangeXY();
+                n.PrintXY();
+            }
+            try
+            {
+                Thread.Sleep(1000);
+            } catch (Exception e) { }
+        }
+    }
+
+    static void ThreadRun()
+    {
+        for(int i = 0;i < 20;i++)
+        {
+            Console.WriteLine("i=" + i);
+            try
+            {
+                Thread.Sleep(1000);//1000ms
+            } catch (Exception e) { }
+        }
+    }
+
+    static void ThreadRunParam(object msg)
+    {
+        for (int i = 0; i < 25; i++)
+        {
+            Console.WriteLine("i=" + i + " msg: " + msg);
+            try
+            {
+                Thread.Sleep(1000);//1000ms
+            }
+            catch (Exception e) { }
+        }
+    }
+
+    // Hoa don tien dien
+    static void Main6(string[] args)
     {
         KhachHangVN a = new KhachHangVN(1, "Nguyen Van An", "2022-09-22", 219, "Cá nhân");
         KhachHangNN b = new KhachHangNN(2, "Donal Trump", "2022-09-21", 156, "US");
@@ -31,6 +109,7 @@ public class Program
 
         DemoEvent de = new DemoEvent();
         de.Invoke();
+
 
     }
     static void ShowMessage(string msg)
