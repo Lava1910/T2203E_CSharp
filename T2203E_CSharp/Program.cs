@@ -8,11 +8,12 @@ using T2203E_CSharp.Session2;
 using T2203E_CSharp.Session3;
 using T2203E_CSharp.Session4;
 using T2203E_CSharp.Session5;
+using T2203E_CSharp.Practice_Exam.GeometryExample;
 
 public class Program
 {
     //API - bat dong bo hoa
-    static void Main(string[] args)
+    static void Main8(string[] args)
     {
         Fetch();
     }

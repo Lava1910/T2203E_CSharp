@@ -11,6 +11,7 @@ namespace T2203E_CSharp.Exercise.Phanso
         public int Tuso { get; set; }
         public int Mauso { get; set; }
 
+
         public void Input(int Tuso, int Mauso)
         {
             Console.WriteLine("Nhập tử số: ");
