@@ -8,14 +8,11 @@ namespace T2203E_CSharp.Practice_Exam.IandP
 {
     public class Lion : Animal
     {
-        public Lion(double weight, string name) : base(weight, name)
+        public Lion(double Weight, string Name) : base(Weight,Name)
         {
 
         }
 
-        public override void Show()
-        {
-            base.Show();
-        }
+
     }
 }

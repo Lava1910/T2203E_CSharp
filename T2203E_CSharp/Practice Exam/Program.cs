@@ -16,6 +16,9 @@ namespace T2203E_CSharp.Practice_Exam
             Tiger tiger = new Tiger(100, "Tiger");
             lion.Show();
             tiger.Show();
+
+            lion.SetMe(150, "Lion1");
+            lion.Show();
         }
         static void Main1(string[] args)
         {

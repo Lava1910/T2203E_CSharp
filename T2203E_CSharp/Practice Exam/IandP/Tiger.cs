@@ -8,7 +8,10 @@ namespace T2203E_CSharp.Practice_Exam.IandP
 {
     public class Tiger : Animal
     {
+        public Tiger(double Weight, string Name) : base(Weight,Name)
+        {
 
+        }
 
     }
 }
