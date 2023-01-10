@@ -30,6 +30,7 @@ namespace T2203E_CSharp.Practice_Exam.GeometryExample
             Radius = double.Parse(Console.ReadLine());
             Console.Write("Height: ");
             Height = double.Parse(Console.ReadLine());
+            Console.WriteLine();
         }
 
 
@@ -43,9 +44,11 @@ namespace T2203E_CSharp.Practice_Exam.GeometryExample
 
         public string Result()
         {
-            return "Base Area: " + Math.Round(BaseArea,2) + "\n" +
-           "Lateral Area: " + Math.Round(LateralArea, 2)  + "\n" +
-           "Total Area: " + Math.Round(TotalArea, 2)  + "\n" +
+            return "Radius: " + Radius + " | " + 
+           "Height: " + Height + "\n" +
+           "Base Area: " + Math.Round(BaseArea,2) + " | " +
+           "Lateral Area: " + Math.Round(LateralArea, 2)  + " | " +
+           "Total Area: " + Math.Round(TotalArea, 2)  + " | " +
            "Volume: " + Math.Round(Volume, 2) ;
         }
 
@@ -56,6 +59,7 @@ namespace T2203E_CSharp.Practice_Exam.GeometryExample
                 Cylinder cylinder = new Cylinder();
                 cylinder.Input();
                 cylinder.Process(cylinder.Radius,cylinder.Height);
+                Console.WriteLine("Cylinder Characteristics: ");
                 Console.WriteLine(cylinder.Result());
             }
         }
