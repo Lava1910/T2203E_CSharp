@@ -52,16 +52,5 @@ namespace T2203E_CSharp.Practice_Exam.GeometryExample
            "Volume: " + Math.Round(Volume, 2) ;
         }
 
-        public class Program
-        {
-            static void Main(string[] args)
-            {
-                Cylinder cylinder = new Cylinder();
-                cylinder.Input();
-                cylinder.Process(cylinder.Radius,cylinder.Height);
-                Console.WriteLine("Cylinder Characteristics: ");
-                Console.WriteLine(cylinder.Result());
-            }
-        }
     }
 }
